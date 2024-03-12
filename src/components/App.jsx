@@ -1,3 +1,9 @@
+import { Phonebook } from "./Phonebook/Phonebook";
+// eslint-disable-next-line no-unused-vars
+import toast, { Toaster } from 'react-hot-toast';
+
+// adding random comment
+
 export const App = () => {
   return (
     <div
@@ -6,11 +12,12 @@ export const App = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: 40,
+        // fontSize: 40,
         color: '#010101'
       }}
     >
-      React homework template
+      <Phonebook />
+      <Toaster />
     </div>
   );
 };
