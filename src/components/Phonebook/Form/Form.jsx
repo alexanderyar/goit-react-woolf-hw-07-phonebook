@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ButtonStyled, FormStyled, Input } from './Form.styled';
 import { Formik } from 'formik';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContactThunkOperation } from 'redux/contacts/contactsOperations';
 import { Header } from '../Contacts/Contacts.styled';
+import { selectContacts } from 'redux/selectors/selectors';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const initialValues = {
   name: '',
@@ -14,8 +17,18 @@ const initialValues = {
 export const FormikForm = ({ handleSubmit }) => {
   const dispatch = useDispatch();
 
+  const contacts = useSelector(selectContacts);
+
   handleSubmit = (values, { resetForm }) => {
-    console.log(values);
+
+    const foundDuplicate = contacts.find(
+      contact => contact.name === values.name
+    );
+
+    if (foundDuplicate) {
+      toast.error(`Oops, ${values.name} is already in your phonebook`);
+      return
+    }
 
     dispatch(addContactThunkOperation(values));
     resetForm();
@@ -36,9 +49,6 @@ export const FormikForm = ({ handleSubmit }) => {
               required
             />
           </label>
-
-
-
 
           <label htmlFor="number">
             phone number
