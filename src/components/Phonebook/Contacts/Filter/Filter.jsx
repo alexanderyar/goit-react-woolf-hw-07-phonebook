@@ -6,7 +6,8 @@ import { FilterInput } from './FIlter.styled';
 import { selectFilter } from 'redux/selectors/selectors';
 
 export const Filter = () => {
-  const filterValue = selectFilter();
+
+  const filterValue = useSelector(selectFilter);
 
   const dispatch = useDispatch();
 

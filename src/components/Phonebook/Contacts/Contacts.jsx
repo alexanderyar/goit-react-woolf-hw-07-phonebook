@@ -22,7 +22,7 @@ export const Contacts = () => {
   const contacts = useSelector(selectContacts);
 
   const filterLowered = useSelector(selectFilter);
-  
+
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filterLowered)
   );
