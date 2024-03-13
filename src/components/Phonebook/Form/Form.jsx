@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContactThunkOperation } from 'redux/contacts/contactsOperations';
 import { Header } from '../Contacts/Contacts.styled';
 import { selectContacts } from 'redux/selectors/selectors';
+// eslint-disable-next-line no-unused-vars
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const initialValues = {
