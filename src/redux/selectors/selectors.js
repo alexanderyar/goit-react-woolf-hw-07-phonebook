@@ -1,5 +1,4 @@
-import { useSelector } from 'react-redux';
+export const selectContacts = state => state.contacts.contacts;
 
-export const selectContacts = useSelector(state => state.contacts.contacts);
-
-export const selectFilter = useSelector(state => state.filter).toLowerCase();
+export const selectFilter = state =>
+  state.filter ? state.filter.toLowerCase() : '';

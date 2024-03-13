@@ -19,10 +19,10 @@ export const Contacts = () => {
     dispatch(fetchContactsThunkOperation());
   }, [dispatch]);
 
-  const contacts = selectContacts();
+  const contacts = useSelector(selectContacts);
 
-  const filterLowered = selectFilter();
-
+  const filterLowered = useSelector(selectFilter);
+  
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filterLowered)
   );
