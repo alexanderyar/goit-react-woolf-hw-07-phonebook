@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContactThunkOperation } from 'redux/contacts/contactsOperations';
 import { Header } from '../Contacts/Contacts.styled';
 import { selectContacts } from 'redux/selectors/selectors';
-import toast, { Toaster } from 'react-hot-toast';
 
 
 const initialValues = {
