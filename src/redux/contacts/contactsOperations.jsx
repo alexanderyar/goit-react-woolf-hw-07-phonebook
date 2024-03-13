@@ -22,18 +22,14 @@ export const addContactThunkOperation = createAsyncThunk("contacts/addContact",
 async (newContact, { rejectWithValue, getState }) => {
     try {
 
-        // getting state to check if a new contact has already been listed as existing contact
         const state = getState()
         console.log(state)
         const currentContacts = state.contacts.contacts;
         
-        // trying to find it in the array of contacts by name
         const foundDuplicate = currentContacts.find(contact => contact.name === newContact.name)
         if (foundDuplicate) {
             toast.error(`Oops, ${newContact.name} is already in your phonebook`)
-            // rejecting promise if the contact exists
         return  rejectWithValue('Oops, this contact is already in your phonebook') }
-            // adding new contact if it has cleared all the checks above
             const response = await addContact(newContact)
             if (response) {toast.success('sucessfully added!')}
             return response;

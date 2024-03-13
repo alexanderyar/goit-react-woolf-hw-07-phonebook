@@ -19,8 +19,8 @@ position: relative;
   border: solid 1px rgba($color: #fafafa, $alpha: 0.3);
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); // easeOutQuart
-  -webkit-mask-image: -webkit-radial-gradient(white, black); // force safari to respect border radius
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 `
     
 
@@ -42,6 +42,3 @@ color:black;
 
 
 
-// padding-left: 15px; 
-// padding-right: 15px;
-// background-color: violet;
